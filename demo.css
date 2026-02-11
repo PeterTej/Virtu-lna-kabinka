@@ -1,0 +1,70 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef3ff 0%, #f8faff 100%);
+  color: #1e2230;
+}
+.app { width: min(1150px, 96vw); margin: 20px auto; }
+.hero h1 { margin: 0; font-size: clamp(1.8rem, 3.8vw, 3rem); }
+.hero p { margin: 0.4rem 0 1rem; color: #50586f; }
+.layout { display: grid; grid-template-columns: 320px 1fr; gap: 16px; }
+.panel, .stageWrap {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(12, 32, 70, 0.11);
+  padding: 14px;
+}
+.panel h2 { font-size: 1rem; margin: 12px 0 8px; }
+.wardrobe { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.wardrobe button {
+  border: 1px solid #dce2f2; background: #f7f9ff; border-radius: 10px;
+  cursor: pointer; padding: 8px; text-align: left; font-size: 0.85rem;
+}
+.wardrobe button.active { border-color: #2f67ff; background: #edf3ff; }
+.poseButtons { display: flex; gap: 8px; }
+.poseButtons button, .reset {
+  border: 0; border-radius: 10px; background: #2f67ff; color: #fff; padding: 10px 12px; cursor: pointer;
+}
+.reset { width: 100%; margin-top: 14px; background: #1f2937; }
+.stage {
+  position: relative;
+  min-height: 640px;
+  border-radius: 14px;
+  background: #f2f4f8;
+  border: 1px solid #e4e7f0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#modelImage { max-width: 100%; max-height: 100%; object-fit: contain; display: none; }
+.garment {
+  position: absolute;
+  width: 42%;
+  height: 34%;
+  top: 34%;
+  left: 29%;
+  border-radius: 16px;
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15) inset;
+}
+.garment.hidden { display: none; }
+.hint {
+  position: absolute;
+  bottom: 12px;
+  background: rgba(255,255,255,.9);
+  border: 1px solid #d7ddeb;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: .9rem;
+}
+.status { margin: 10px 0 0; color: #2f3850; font-weight: 600; }
+.pose-threequarter .stage, .pose-side .stage { transform-origin: center; }
+#stage.pose-threequarter #modelImage { transform: rotateY(-12deg); }
+#stage.pose-side #modelImage { transform: rotateY(-20deg); }
+@media (max-width: 930px) { .layout { grid-template-columns: 1fr; } .stage { min-height: 520px; } }

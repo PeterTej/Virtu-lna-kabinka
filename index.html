@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtuálna kabínka — funkčné demo</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <h1>Virtuálna kabínka</h1>
+        <p>Funkčné demo bez build procesu (otvoríš hneď cez statický server).</p>
+      </header>
+
+      <section class="layout">
+        <aside class="panel">
+          <h2>1) Nahraj fotku modelu</h2>
+          <input id="modelUpload" type="file" accept="image/*" />
+
+          <h2>2) Vyber top</h2>
+          <div id="wardrobe" class="wardrobe"></div>
+
+          <h2>3) Nastav farbu</h2>
+          <label for="colorPicker">Farba vrstvy</label>
+          <input id="colorPicker" type="color" value="#2f67ff" />
+
+          <h2>4) Pose (demo)</h2>
+          <div class="poseButtons">
+            <button data-pose="front">Front</button>
+            <button data-pose="threequarter">3/4</button>
+            <button data-pose="side">Side</button>
+          </div>
+
+          <button id="resetBtn" class="reset">Reset</button>
+        </aside>
+
+        <section class="stageWrap">
+          <div id="stage" class="stage pose-front">
+            <img id="modelImage" alt="Model" />
+            <div id="garmentLayer" class="garment hidden"></div>
+            <div id="hint" class="hint">Nahraj fotku modelu pre náhľad.</div>
+          </div>
+          <p id="status" class="status">Pripravené.</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="demo.js" type="module"></script>
+  </body>
+</html>
