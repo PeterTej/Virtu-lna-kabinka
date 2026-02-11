@@ -1,11 +1,25 @@
-<div align="center">
+# Virtuálna kabínka — funkčné demo
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Tento repozitár teraz obsahuje **okamžite spustiteľné demo** (bez npm inštalácie), aby sa UI zobrazilo vždy spoľahlivo.
 
-  <h1>Built with AI Studio</h2>
+## Ako spustiť
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+```bash
+python3 -m http.server 4173
+```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+Otvoriť:
 
-</div>
+- `http://localhost:4173`
+
+## Čo demo vie
+
+- nahrať fotku modelu,
+- vybrať typ vrchnej vrstvy (wardrobe),
+- zmeniť farbu vrstvy,
+- prepínať demo pózy (front / 3/4 / side),
+- resetovať celý stav.
+
+## Poznámka
+
+Ide o **funkčné prezentačné demo** vhodné na ukážku flow a UI správania. AI generovanie outfitu je možné doplniť ako ďalší krok.
